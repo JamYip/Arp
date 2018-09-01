@@ -31,5 +31,8 @@
 *.out
 *.app
 
-#vscode
+# vscode
 .vscode
+
+# Release
+arp_request

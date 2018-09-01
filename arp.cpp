@@ -107,7 +107,7 @@ bool Arp::SendRequest(const string& sender_mac,
     device.sll_halen = 6;
 
     // send packet
-    ArpMsg arp_msg(2, sender_mac, sender_ip, target_mac, target_ip);
+    ArpMsg arp_msg(1, sender_mac, sender_ip, target_mac, target_ip);
     ArpEthernetFrame frame(target_mac, GetLocalMac(), &arp_msg);
     auto res = sendto(arp_socket, &frame, 42, 0, (sockaddr*)&device, sizeof (device));
     if (res <= 0)
